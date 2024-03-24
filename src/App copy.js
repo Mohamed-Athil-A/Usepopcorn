@@ -111,13 +111,18 @@ function Logo() {
 }
 function Search({ query, setQuery }) {
   const inputElement = useRef(null);
-
+  console.log(inputElement);
   useKey("Enter", function () {
     if (document.activeElement === inputElement.current) return;
     inputElement.current.focus();
     setQuery("");
   });
 
+  // useEffect(function () {
+  //   const el = document.querySelector(".search");
+  //   console.log(el);
+  //   el.focus();
+  // }, []);
   return (
     <input
       className="search"
